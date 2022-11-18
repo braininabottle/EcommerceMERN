@@ -1,0 +1,12 @@
+.image-size{
+    width: 500px;
+    height: 600px;
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-bottom: 5px;
+    font-weight: bold;
+    align: left;
+}

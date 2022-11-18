@@ -1,0 +1,50 @@
+import { useState, useEffect } from 'react';
+import CardList from '../card-list/card-list.component';
+import SearchBox from '../search-box/search-box.component';
+import Spinner from '../spinner/Spinner.component'
+import Navbar from '../../components/navbar/Navbar.component'
+import './shop.styles.css';
+
+const Shop = () => {
+  const [searchField, setSearchField] = useState('');
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilterProducts] = useState(products);
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('http://localhost:4000/api/products')
+      .then((response) => response.json())
+      .then((response) => {
+        setProducts(response.products)
+        setLoading(false)
+      });
+  }, []);
+
+  useEffect(() => {
+    const newFilteredProducts = products.filter((product) => {
+      return product.title.toLocaleLowerCase().includes(searchField);
+    });
+
+    setFilterProducts(newFilteredProducts);
+  }, [products, searchField]);
+
+  const onSearchChange = (event) => {
+    const searchFieldString = event.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldString);
+  };
+
+  return (
+    <div className='App'>
+      <h1 className='app-title'>Tienda</h1>
+      <SearchBox
+        className='search-box'
+        onChangeHandler={onSearchChange}
+        placeholder='buscar producto'
+      />
+      <CardList products={filteredProducts} />
+      {loading? <Spinner />: null}
+    </div>
+  );
+};
+
+export default Shop;
