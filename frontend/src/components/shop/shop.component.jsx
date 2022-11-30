@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import CardList from '../card-list/card-list.component';
 import SearchBox from '../search-box/search-box.component';
 import Spinner from '../spinner/Spinner.component'
-import Navbar from '../../components/navbar/Navbar.component'
 import './shop.styles.css';
 
 const Shop = () => {
@@ -35,7 +34,7 @@ const Shop = () => {
 
   return (
     <div className='App'>
-      <h1 className='app-title'>Tienda</h1>
+      <h1 className='app-title text-white'>Nuestros productos</h1>
       <SearchBox
         className='search-box'
         onChangeHandler={onSearchChange}

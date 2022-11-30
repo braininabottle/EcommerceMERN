@@ -1,23 +1,34 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route, Navigate} from 'react-router-dom'
-import Shop from './components/shop/shop.component'
 import Login from './components/login/login.component'
 import Home from './views/home/Home.view'
 import Store from './views/store/store.view'
 import Customer from './views/customer/customer.view'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import UserContext from './context/Usercontext';
+import Profile from './views/profile/Profile.view'
+import Cart from './views/cart/Cart.view'
 
 function App(){
-
+  
   const context = useContext(UserContext)
   const user = context.userState.user 
+
+
+  useEffect(()=>{
+    const userLS = window.localStorage.getItem('user')
+    if(userLS){
+      context.login()
+    }
+  },[])
 
   return(
       <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/shop' element={<Store/>} />
+          <Route path='/profile' element={<Profile/>} />
+          <Route path='/cart' element={<Cart />}  />
           {!user && <Route path='/login' element={<Customer/>} />}
           <Route path='/signup' element={<Login/>} />
           <Route path='*' element={<Navigate to='/'/>} />

@@ -78,6 +78,10 @@ const login = async (req,res) => {
     }
 }
 
-module.exports = { createUser, getUsers, deleteUser, editUser, login }
+const validateToken = async (req, res) => {
+    console.log('hola')
+}
+
+module.exports = { createUser, getUsers, deleteUser, editUser, login, validateToken }
 
 // Para que el usuario se cree una cuenta y despues inicie sesión manualmente el token no se envia en el createuser

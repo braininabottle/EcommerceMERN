@@ -8,5 +8,8 @@ label{
     color: white;
     margin-bottom: 5px;
     font-weight: bold;
-    align: left;
+}
+
+.login-title{
+    font-family:'Paytone One', sans-serif;
 }

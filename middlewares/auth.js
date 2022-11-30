@@ -1,7 +1,7 @@
  const { expressjwt } = require('express-jwt')
 
  const getToken = (req,res) => {
-    const { authorization } = req.headeers
+    const { authorization } = req.headers
 
     if(authorization){
        const { type, token } = authorization.split(' ')

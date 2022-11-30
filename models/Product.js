@@ -7,7 +7,13 @@ const productSchema = new mongoose.Schema({
     brand: String,
     stock: Number, 
     imageUrl: String,
-    degrees: Number
+    degrees: Number,
+    properties: [
+        {
+            item: String,
+            value: String
+        }
+    ]
 })
 
 const Product = mongoose.model('product', productSchema )

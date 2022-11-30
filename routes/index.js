@@ -13,7 +13,8 @@ const {
     getUsers,
     deleteUser,
     editUser, 
-    login
+    login,
+    validateToken
 } = require('../controllers/userControllers')
 const auth = require('../middlewares/auth')
 
@@ -22,6 +23,6 @@ router.route('/products/:id').delete(deleteProduct).put(editProduct)
 
 router.route('/users').post(createUser).get(getUsers)
 router.route('/users/:id').delete(deleteUser).put(editUser)
-router.route('/users/login').post(login)
+router.route('/users/login').post(login).get(validateToken)
 
 module.exports = router

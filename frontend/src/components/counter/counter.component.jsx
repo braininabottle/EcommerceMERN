@@ -1,36 +1,46 @@
 import { useState } from "react"
 import './counter.style.css'
 
-const Counter = () => {
-    const [count, setCount] = useState(0)
+const Counter = (props) => {
+    // const [count, setCount] = useState(1)
 
-    const increment = () => {
-        setCount(count + 1)
+    // const increment = () => {
+    //     if(count < props.maxStock){
+    //         setCount(count + 1)
+    //     }
+    // }
+
+    // const decrement = () => {
+    //     if(count >= 2){
+    //         setCount(count - 1);
+    //     }
+    // }
+
+    const addToCart = () => {
+        console.log('buying the product')
     }
 
-    const decrement = () => {
-        setCount(count - 1);
-    }
 
     return(
-        <div className="counterContainer">
-            <button 
+        <div className="counterContainer d-flex align-items-center">
+            {/* <button 
             onClick={decrement}
-            className="btn btn-danger"
+            className="btn btn-light"
             >
                 -
             </button>
             <p>{count}</p>
             <button 
             onClick={increment}
-            className="btn btn-primary"
+            className="btn btn-light"
             >
                 +
-            </button>
+            </button> */}
             <button 
             className="btn btn-dark"
+            onClick={addToCart}
             >
-                COMPRAR
+                AGREGAR AL CARRITO
             </button>
         </div>
         )
