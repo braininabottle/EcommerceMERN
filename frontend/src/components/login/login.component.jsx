@@ -16,65 +16,16 @@ const Login = () => {
 
     const context = useContext(UserContext)
 
-
-    const login = async () => {
-        try {
-            const response = await axios.post('http://localhost:4000/api/users/login', user)
-            const validationToken = response.data.token
-            if(validationToken){
-                window.localStorage.setItem('user', response.data.token)
-                context.signIn()
-            }else {
-                throw new Error('Correo y/o clave no son correctos, intente nuevamente')
-            }
-
-        } catch (error) {
-            Swal.fire({
-                icon: 'error',
-                text: error.message
-            })
-        }
-    
-}
-    const registration = async () => {
-        try {
-            const response = await axios.post('http://localhost:4000/api/users', user)
-            const validation = response.data.success
-            if(validation){
-                window.localStorage.setItem('user', response.data.token)
-                context.login()
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Usuario creado exitosamente',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }else{
-                throw new Error('Usuario y/o clave no cumple con los requisitos, intente nuevamente')
-            }
-
-        } catch (error) {
-            Swal.fire({
-                icon: 'error',
-                text: error.message
-            })
-        }
-
-    }
-
     const handleRegister = (event) => {
         event.preventDefault()
         if (register) {
             setLoading(true)
-            registration()
-            setLoading(false)
-        } else if (!register) {
-            setLoading(true)
-            login()
+            context.signUp(user)
             setLoading(false)
         } else {
-
+            setLoading(true)
+            context.login(user)
+            setLoading(false)
         }
     }
 

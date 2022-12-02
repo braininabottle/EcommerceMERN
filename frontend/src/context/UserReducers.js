@@ -1,15 +1,25 @@
 const UserReducer = (state, action) => {
 
-    switch( action.type){
+    const {type, payload } = action
+
+    switch(type){
         case 'LOGIN':
-            return { user: true}
+            localStorage.setItem('token', payload)
+            return { 
+                ...state,
+                token: payload
+            }
         case 'LOGOUT':
-            localStorage.removeItem('user')
-            return { token: null}
-        case 'PROFILE':
-            return { user:true}
-        case 'REGISTER':
-            return { user: true}
+            localStorage.removeItem('token')
+            return { 
+                ...state,
+                token: null
+            }
+         case 'USERDATA':
+            return {
+                ...state,
+                user: payload
+            }
         default :
         return state
     }

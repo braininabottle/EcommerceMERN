@@ -2,3 +2,8 @@
     display: flex;
     align-items: center;
 }
+
+.divButtonAddToCart{
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 15px;
+  }

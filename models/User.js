@@ -7,21 +7,19 @@ const userSchema = new mongoose.Schema({
     password: {type:String, required: true, minLenght: 8 },
     name: {
         type: String,
-        required: true,
         trim: true,
         lowercase: true,
-        default: 'name'
+        default: ''
     },
     lastname: {
         type: String,
-        required: true,
         trim: true,
         lowercase: true,
-        default:'lastname'
+        default:''
     },
     address: {
-        street: String,
-        city: String
+        street: { type: String, default: ''},
+        city: { type: String, default: ''}
     },
     salt: {type: String, required: true}
 })

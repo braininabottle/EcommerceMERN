@@ -24,11 +24,11 @@ const createUser =  async (req, res) => {
   
 }
 
-const getUsers = async (req, res) => {
+const getUser = async (req, res) => {
     try{
-        const users = await User.find() 
-        res.json({success: true, users})
-    }catch{
+        const user = await User.findById(req.auth.id) 
+        res.json({success: true, user})
+    }catch(error){
         res.json({success: false, message: error.message})
     }
 }
@@ -48,12 +48,11 @@ const deleteUser = async (req, res) => {
 
 const editUser = async (req, res) => {
     try{
-        const { id } = req.params
-        const productFound = await User.findByIdAndUpdate(id, req.body, {new: true})
-        if(!productFound){
-            throw new Error('The user is already modified')
-        }
-        res.json({success: true, response: 'User edited'})
+        const { id } = req.auth
+        const { name, lastname, city, street } = req.body
+        const user = {name, lastname, address: { city, street}}
+        const editedUser = await User.findByIdAndUpdate(id, user, {new: true})
+        res.json({success: true, response: 'User edited', user: editedUser})
     }catch(error){
         res.json({success: false, message: error.message})
     }
@@ -79,9 +78,9 @@ const login = async (req,res) => {
 }
 
 const validateToken = async (req, res) => {
-    console.log('hola')
+    res.json({success: true})
 }
 
-module.exports = { createUser, getUsers, deleteUser, editUser, login, validateToken }
+module.exports = { createUser, getUser, deleteUser, editUser, login, validateToken }
 
 // Para que el usuario se cree una cuenta y despues inicie sesión manualmente el token no se envia en el createuser

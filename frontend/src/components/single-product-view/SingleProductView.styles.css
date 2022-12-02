@@ -1,31 +1,25 @@
-.userForm form{
+.single-product-container{
     display: flex;
     flex-direction: column;
     background-color: white !important;
-    border: 1px solid black;
-    border-radius: 5px;
     padding: 25px;
-    color:black;
-    width: 50%;
+    width: 800px;
+    height: 100%;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
     cursor: pointer;
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
-    height: 50%;
-
 }
 
-.userForm label{
-    font-family: 'Ubuntu', sans-serif;
-
-}
-
-.userForm {
+.productContainer{
+    display:flex;
     justify-content: center;
-
 }
 
-.userFormTitle{
-    font-family:'Paytone One', sans-serif;
+.fontStyle{
+    font-family: 'Ubuntu', sans-serif;
 }

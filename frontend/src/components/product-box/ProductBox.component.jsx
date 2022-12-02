@@ -6,7 +6,7 @@ import CartContext from '../../context/CartContext'
 
 const ProductBox = ({product}) => {
 
-    const {title, imageUrl, qty,  _id} = product
+    const {title, imageUrl, qty, price,  _id} = product
     const context = useContext(CartContext)
 
     return(
@@ -16,6 +16,7 @@ const ProductBox = ({product}) => {
                 <p>{title}</p>
             </div>
             <p className='customQtyBox'>{qty}</p>
+            <p className='customQtyBox'>{price}</p>
             <div className='cartDeleteButton d-flex'>
                 <button
                 onClick={()=>context.deleteProdcutFromCart(_id)} 

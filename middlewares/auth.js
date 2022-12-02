@@ -2,9 +2,8 @@
 
  const getToken = (req,res) => {
     const { authorization } = req.headers
-
     if(authorization){
-       const { type, token } = authorization.split(' ')
+       const [type, token ] = authorization.split(' ')
        return type === 'Bearer' ? token : null
     }
     return null

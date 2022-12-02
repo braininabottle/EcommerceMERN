@@ -3,7 +3,6 @@ const Product = require('../models/Product')
 const getProducts = async (req, res) => {
     try{
         const products = await Product.find()
-        console.log(products)
         res.json({success: true, products})
     }catch(error) {
         res.json({success: false, message: error.message})
@@ -47,4 +46,14 @@ const editProduct = async (req, res) => {
     }
 }
 
-module.exports ={getProducts, createProduct, deleteProduct, editProduct}
+const getProductById = async (req,res) => {
+        try{
+            const { id } = req.params
+            const product = await Product.findById(id)
+            res.json({success: true, product})
+        }catch(error) {
+            res.json({success: false, message: error.message})
+        }
+}
+
+module.exports ={getProducts, createProduct, deleteProduct, editProduct, getProductById}

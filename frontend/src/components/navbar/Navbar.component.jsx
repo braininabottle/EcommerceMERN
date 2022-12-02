@@ -29,9 +29,9 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-dark">
             <div className="container-fluid">
-                <Link className="navbar-brand logo-container" to='/'>
+                {/* <Link className="navbar-brand logo-container" to='/'>
                     <NightlifeOutlinedIcon fontSize="large" style={{ color: '#fff' }} />
-                </Link>
+                </Link> */}
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -48,7 +48,7 @@ const Navbar = () => {
                     id="navbarNav"
                 >
                     <ul className="navbar-nav">
-                        {context.userState.user ? <li className="mt-2 mb-3 fs-6 text-center nav-link badge bg-dark text-wrap active text-white">Bienvenido a tu usuario <AccountCircleOutlinedIcon /></li> : <li className="nav-item navFontCustomize">
+                        {context.userState.token ? <li className="mt-2 mb-3 fs-6 text-center nav-link badge bg-dark text-wrap active text-white">Bienvenido a tu usuario <AccountCircleOutlinedIcon /></li> : <li className="nav-item navFontCustomize">
                             <Link
                                 to='/login'
                                 className="nav-link navFontCustomize"
@@ -57,7 +57,7 @@ const Navbar = () => {
                                 <AccountCircleOutlinedIcon />
                             </Link>
                         </li>}
-                        {context.userState.user ? <Link to='/profile' className="nav-link navFontCustomize" >Perfil</Link> : <li className="nav-item"></li>}
+                        {context.userState.token ? <Link to='/profile' className="nav-link navFontCustomize" >Perfil</Link> : <li className="nav-item"></li>}
                         <li className="nav-item navCustomize">
                             <Link
                                 to='/'
@@ -78,7 +78,7 @@ const Navbar = () => {
                                 </IconButton>
                             </Link>
                         </li>
-                        {context.userState.user ? <li><button className='logOutButtonCustom nav-link' onClick={context.logout}> Cerrar sesión</button></li> : <li className=""></li>}
+                        {context.userState.token ? <li><button className='logOutButtonCustom nav-link' onClick={()=>context.logout()}> Cerrar sesión</button></li> : <li className=""></li>}
                     </ul>
                 </div>
             </div>

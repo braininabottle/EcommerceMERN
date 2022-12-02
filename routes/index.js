@@ -3,14 +3,15 @@ const {
     getProducts, 
     createProduct, 
     deleteProduct ,
-    editProduct
+    editProduct,
+    getProductById
 } = require('../controllers/productsControllers')
 
 const router = express.Router()
 
 const { 
     createUser,
-    getUsers,
+    getUser,
     deleteUser,
     editUser, 
     login,
@@ -19,10 +20,10 @@ const {
 const auth = require('../middlewares/auth')
 
 router.route('/products').get(getProducts).post(createProduct)
-router.route('/products/:id').delete(deleteProduct).put(editProduct)
+router.route('/products/:id').delete(deleteProduct).put(editProduct).get(getProductById)
 
-router.route('/users').post(createUser).get(getUsers)
-router.route('/users/:id').delete(deleteUser).put(editUser)
-router.route('/users/login').post(login).get(validateToken)
+router.route('/users').post(createUser).get(auth, getUser).put(auth, editUser)
+router.route('/users/:id').delete(deleteUser)
+router.route('/users/login').post(login).get(auth, validateToken)
 
 module.exports = router

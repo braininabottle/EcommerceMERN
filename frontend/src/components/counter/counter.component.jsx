@@ -1,49 +1,58 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import './counter.style.css'
+import CartContext from '../../context/CartContext'
 
-const Counter = (props) => {
-    // const [count, setCount] = useState(1)
-
-    // const increment = () => {
-    //     if(count < props.maxStock){
-    //         setCount(count + 1)
-    //     }
-    // }
-
-    // const decrement = () => {
-    //     if(count >= 2){
-    //         setCount(count - 1);
-    //     }
-    // }
-
-    const addToCart = () => {
-        console.log('buying the product')
-    }
-
+const Counter = ({ product }) => {
+    const context = useContext(CartContext)
+    const [qty, setQty] = useState(1)
+    const { stock } = product;
+   
+    
+    const decrease = () => {
+        if (qty >= 2) {
+          setQty(qty - 1)
+        }
+      }
+    
+      const increase = () => {
+        if (qty < stock) {
+          setQty(qty + 1)
+        }
+      }
 
     return(
-        <div className="counterContainer d-flex align-items-center">
-            {/* <button 
-            onClick={decrement}
-            className="btn btn-light"
-            >
-                -
-            </button>
-            <p>{count}</p>
-            <button 
-            onClick={increment}
-            className="btn btn-light"
-            >
-                +
-            </button> */}
-            <button 
-            className="btn btn-dark"
-            onClick={addToCart}
-            >
-                AGREGAR AL CARRITO
-            </button>
+        <div className='divButtonAddToCart'>
+        <div>
+          <button
+            className='qtyButton btn fs-5 btn-dark text-white'
+            onClick={decrease}
+            disabled={qty === 1}
+          >
+            -
+          </button>
+          <span
+            className='p-2 fs-5'
+          >
+            {qty}
+          </span>
+          <button
+            className='qtyButton fs-5 btn btn-dark text-white'
+            onClick={increase}
+            disabled={qty === stock}
+          >
+            +
+          </button>
         </div>
-        )
+        <div className='mt-3'>
+          <button
+            className='btn btn-dark'
+            onClick={() => context.addToCart(product, qty)}
+          >
+            AGREGAR AL CARRITO
+          </button>
+        </div>
+      </div>
+    )
 }
 
 export default Counter

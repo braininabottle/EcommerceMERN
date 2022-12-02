@@ -5,32 +5,42 @@ import Login from './components/login/login.component'
 import Home from './views/home/Home.view'
 import Store from './views/store/store.view'
 import Customer from './views/customer/customer.view'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import UserContext from './context/Usercontext';
 import Profile from './views/profile/Profile.view'
 import Cart from './views/cart/Cart.view'
+import Product from './views/product/Product.view';
 
 function App(){
   
   const context = useContext(UserContext)
-  const user = context.userState.user 
+  const token = context.userState.token
+  const [loadingToken, setLoadingToken] = useState(true)
 
+  const validateToken = async () => {
+    const tokenLS = window.localStorage.getItem('token')
+    if(tokenLS){
+      await context.validateToken(tokenLS)
+    }
+    setLoadingToken(false)
+  }
 
   useEffect(()=>{
-    const userLS = window.localStorage.getItem('user')
-    if(userLS){
-      context.login()
-    }
+    validateToken()
   },[])
+
+  if(loadingToken){
+    return null
+  }
 
   return(
       <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/shop' element={<Store/>} />
-          <Route path='/profile' element={<Profile/>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/product/:id' element={<Product />} />
+          {token && <Route path='/profile' element={<Profile/>} />}
           <Route path='/cart' element={<Cart />}  />
-          {!user && <Route path='/login' element={<Customer/>} />}
-          <Route path='/signup' element={<Login/>} />
+          {!token && <Route path='/login' element={<Customer/>} />}
+          {!token && <Route path='/signup' element={<Login/>} />}
           <Route path='*' element={<Navigate to='/'/>} />
       </Routes>
   )
