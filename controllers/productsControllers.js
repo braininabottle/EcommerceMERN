@@ -56,12 +56,13 @@ const getProductById = async (req,res) => {
 }
 
 const productReducer = async (req,res) => {
+    console.log(req.body)
     const products = req.body.cart
     try {
       products.map(async (product) => {
         await Product.findByIdAndUpdate(product._id, { stock: product.stock - product.qty })
       })
-      res.json({ success: true })
+      res.json({ success: true, message: 'hola' })
     } catch (error) {
       res.json({ success: false, error: error.message })
     }
