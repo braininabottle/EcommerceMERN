@@ -31,6 +31,12 @@ const CartReducer = (state, action) => {
                 qty : getQty(result)
             } 
 
+        case 'CLEAN':
+            return { 
+                cart: [],
+                 qty: 0 
+            }
+
         default :
         return state
     }

@@ -13,7 +13,6 @@ const createProduct = async (req, res) => {
     try{
         const newProduct = new Product(req.body)
         await newProduct.save() 
-        console.log(newProduct)
         res.json({success: true, message: 'Producto creado', productId: newProduct._id })
     }catch(error){
         res.json({success: false, message: error.message})
@@ -56,4 +55,17 @@ const getProductById = async (req,res) => {
         }
 }
 
-module.exports ={getProducts, createProduct, deleteProduct, editProduct, getProductById}
+const productReducer = async (req,res) => {
+    const products = req.body.cart
+    try {
+      products.map(async (product) => {
+        await Product.findByIdAndUpdate(product._id, { stock: product.stock - product.qty })
+      })
+      res.json({ success: true })
+    } catch (error) {
+      res.json({ success: false, error: error.message })
+    }
+
+}
+
+module.exports ={getProducts, createProduct, deleteProduct, editProduct, getProductById, productReducer}

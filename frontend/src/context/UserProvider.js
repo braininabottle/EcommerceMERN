@@ -9,8 +9,7 @@ const UserProvider = ({children})=> {
 
     const signUp = async (user) => {
         try {
-            const response = await axios.post('http://localhost:4000/api/users', user)
-            console.log(response)
+            const response = await axios.post('https://bienbebidos.herokuapp.com/api/users', user)
             if(response.data.success){
                 dispatch({ type: 'LOGIN', payload: response.data.token })
                 Swal.fire({
@@ -34,7 +33,7 @@ const UserProvider = ({children})=> {
 
     const login = async (user) => {
         try{
-            const response = await axios.post('http://localhost:4000/api/users/login', user)
+            const response = await axios.post('https://bienbebidos.herokuapp.com/api/users/login', user)
             if(response.data.success){
                 dispatch({type : 'LOGIN', payload: response.data.token})
                 Swal.fire({
@@ -58,14 +57,12 @@ const UserProvider = ({children})=> {
 
 
     const logout = () => {
-        console.log('estoy en funcion logout')
         dispatch({type: 'LOGOUT'})
     }
 
 
     const validateToken = async (token) => {
-        console.log(token)
-            const response = await axios.get('http://localhost:4000/api/users/login', {
+            const response = await axios.get('https://bienbebidos.herokuapp.com/users/login', {
                 headers: {
                     Authorization: 'Bearer ' + token
                 }
@@ -78,27 +75,26 @@ const UserProvider = ({children})=> {
 
     const getUserData = async (token) => {
         try{
-            const response = await axios.get('http://localhost:4000/api/users', {
+            const response = await axios.get('https://bienbebidos.herokuapp.com/api/users', {
                 headers: {
                     Authorization: 'Bearer ' + token
                 }
             })
-            console.log(response)
             if(response.data.success){
                 dispatch({type: 'USERDATA', payload: response.data.user})
             }
-        }catch(e){
-
+        }catch(error){
+             console.log(error.message)
         }
     }
     
     const editUserData = async (user) => {
-        try{const response = await axios.put('http://localhost:4000/api/users', user, {
+        try{const response = await axios.put('https://bienbebidos.herokuapp.com/users', user, {
             headers: {
                 Authorization: 'Bearer ' + userState.token
             }
         })
-        console.log(response)
+
         if(response.data.success){
             dispatch({type: 'USERDATA', payload: response.data.user})
             Swal.fire({

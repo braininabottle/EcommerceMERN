@@ -28,7 +28,7 @@ const SingleProductView = () => {
     }
 
     const getProduct = async () => {
-        const response = await axios.get(`http://localhost:4000/api/products/${id}`)
+        const response = await axios.get(`https://bienbebidos.herokuapp.com/api/products/${id}`)
         const productInfo = response.data.product
         setProduct(productInfo)
     }
@@ -37,6 +37,13 @@ const SingleProductView = () => {
         getProduct()
         setLoading(false)
     }, [])
+
+    const formatter = new Intl.NumberFormat('es-CL', {
+        style: 'currency',
+        currency: 'CLP',
+      
+      });
+
 
     return (
         <Fragment>
@@ -52,7 +59,7 @@ const SingleProductView = () => {
                         <h3 className='fontStyle card-title'>{title}</h3>
                         <p className='fontStyle card-description'><span className='card-price'>Descripción del producto:</span> {description}</p>
                         <p className='fontStyle card-price'>Marca del Producto: {brand}</p>
-                        <p className='fontStyle card-price'>${price} <span className=''>/Prec. Unit</span></p>
+                        <p className='fontStyle card-price'>{formatter.format(price)} <span className=''>/Prec. Unit</span></p>
                         <p className='fontStyle card-price'>Productos en stock : {stock}</p>
                         <p className='fontStyle card-price'>Volumen: {volume}</p>
                         <p className='fontStyle card-price'>Grados de alcohol: {degrees}</p>

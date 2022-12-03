@@ -4,7 +4,8 @@ const {
     createProduct, 
     deleteProduct ,
     editProduct,
-    getProductById
+    getProductById,
+    productReducer
 } = require('../controllers/productsControllers')
 
 const router = express.Router()
@@ -21,6 +22,7 @@ const auth = require('../middlewares/auth')
 
 router.route('/products').get(getProducts).post(createProduct)
 router.route('/products/:id').delete(deleteProduct).put(editProduct).get(getProductById)
+router.route('/products/reducedstock').put(productReducer)
 
 router.route('/users').post(createUser).get(auth, getUser).put(auth, editUser)
 router.route('/users/:id').delete(deleteUser)

@@ -11,7 +11,6 @@ const UserProfile = () => {
     const { name, lastname, address } = context.userState?.user
     const { city, street } = address
     const [user, setUser] = useState({ name, lastname, city, street })
-    // const [saveUser, setSaveUser] = useState()
 
 
     const handleInput = (e) => {
@@ -29,8 +28,6 @@ const UserProfile = () => {
         setUser({ name, lastname, city, street })
     }, [street])
 
-
-    console.log(user)
     return (
         <Fragment>
             <h1 className='userFormTitle mt-4 mb-4 text-white'>Información del usuario</h1>
