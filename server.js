@@ -9,15 +9,14 @@ app.use(express.json())
 app.use(cors())
 app.use('/api', router)
 
- 
 
-  app.use(express.static('frontend/build'))
+  // app.use(express.static('frontend/build'))
   
-   app.get('*', (req, res) => {
+  // app.get('*', (req, res) => {
   
-      res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
+  // res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
   
-    })
+  //   })
   
   
 
