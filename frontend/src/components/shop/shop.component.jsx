@@ -11,7 +11,7 @@ const Shop = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://bienbebidos.herokuapp.com/api/products')
+    fetch('http://localhost:4000/api/products')
       .then((response) => response.json())
       .then((response) => {
         setProducts(response.products)
