@@ -10,17 +10,17 @@ e-commerce con sus funciones mas basicas: despliegue de sección de productos, s
 ## Link de la aplicación: 
 
 En esta app encontrarás lo siguiente 🧾	 :
-1. Una sección <span>HOME</span> con despliegue de todos los productos ofrecidos por la licoreria, filtro de busca y carrousel interactivo con imagenes. Ademas puedes navegar entre los distintosm
-componentes del <span>NAVBAR</span>.
-2. Una sección de <span>LOGIN</span> donde puedes registrar tu usuario y además iniciar sesión una vez que ya tengas tu usuario registrado.
-3. Una sección de <span>PROFILE</span> donde el usuario puede registrar su información de contacto dentro de nuestra web.
-4. Y finalmente una sección de <span>CART</span> con el carrito de compras en el cual se guardan la totalidad de los productos hasta que el cliente realiza la compra.
+1. Una sección <span style="color: yellow;">HOME</span> con despliegue de todos los productos ofrecidos por la licoreria, filtro de busca y carrousel interactivo con imagenes. Ademas puedes navegar entre los distintos.
+componentes del <span style="color: yellow;">NAVBAR</span>.
+2. Una sección de <span style="color: yellow;">LOGIN</span> donde puedes registrar tu usuario y además iniciar sesión una vez que ya tengas tu usuario registrado.
+3. Una sección de <span style="color: yellow;">PROFILE</span> donde el usuario puede registrar su información de contacto dentro de nuestra web.
+4. Y finalmente una sección de <span style="color: yellow;">CART</span> con el carrito de compras en el cual se guardan la totalidad de los productos hasta que el cliente realiza la compra.
 <br>
 <br>
 <br>
 <h1 className="project-state">Estado del proyecto </h1>
 
-<span style="font-size: 40px">Terminado 👌.</span>
+<p style="color: yellow; font-size: 50px;">Terminado 👌.</p>
 
 <br>
 <br>
