@@ -10,15 +10,15 @@ e-commerce con sus funciones mas basicas: despliegue de sección de productos, s
 ## Link de la aplicación: 
 
 En esta app encontrarás lo siguiente 🧾	 :
-1. Una sección <Home /> con despliegue de todos los productos ofrecidos por la licoreria, filtro de busca y carrousel interactivo con imagenes. Ademas puedes navegar entre los distintosm
-componentes del <Navbar />
-2. Una sección de <Login/> donde puedes registrar tu usuario y además iniciar sesión una vez que ya tengas tu usuario registrado.
-3. Una sección de <Profile /> donde el usuario puede registrar su información de contacto dentro de nuestra web.
-4. Y finalmente una sección de <Cart/> con el carrito de compras en el cual se guardan la totalidad de los productos hasta que el cliente realiza la compra.
+1. Una sección *<Home>* con despliegue de todos los productos ofrecidos por la licoreria, filtro de busca y carrousel interactivo con imagenes. Ademas puedes navegar entre los distintosm
+componentes del *<Navbar>*.
+2. Una sección de *<Login>* donde puedes registrar tu usuario y además iniciar sesión una vez que ya tengas tu usuario registrado.
+3. Una sección de *<Profile>* donde el usuario puede registrar su información de contacto dentro de nuestra web.
+4. Y finalmente una sección de *<Cart>* con el carrito de compras en el cual se guardan la totalidad de los productos hasta que el cliente realiza la compra.
 <br>
 <br>
 <br>
-<h1 className="fs-1">Estado del proyecto </h1>
+<h1 className="project-state">Estado del proyecto </h1>
 
 <span style="color: yellow">Terminado 👌.</span>
 
@@ -45,7 +45,7 @@ componentes del <Navbar />
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" height="48" width="48"/>
     </a>
     <a href="https://expressjs.com/">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_QMQU86---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6dnng3pre04xxdebia1g.png" height="48" width="48"/>
+        <img src="https://miro.medium.com/max/960/1*X7a7F-yXRUAGLGLzdlGQMA.png" height="48" width="48"/>
     </a>
     <a href="https://docs.npmjs.com/">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh9vC2g2zT7TKq_T2hgXPm50Kmg8lrwDSZGcujUf21JQ&s" height="48" width="48"/>
