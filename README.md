@@ -20,7 +20,7 @@ componentes del <span>NAVBAR</span>.
 <br>
 <h1 className="project-state">Estado del proyecto </h1>
 
-<span style="font-size:18px">Terminado 👌.</span>
+<span style="font-size: 40px">Terminado 👌.</span>
 
 <br>
 <br>
