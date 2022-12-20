@@ -18,7 +18,7 @@ componentes del **/NAVBAR**.
 <br>
 <br>
 <br>
-<h1 className="project-state">Estado del proyecto </h1>
+<h1>Estado del proyecto </h1>
 
 **Terminado** 👌
 
