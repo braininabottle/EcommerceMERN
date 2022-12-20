@@ -1,4 +1,4 @@
-<h1>¡Hola ✌️, Bienvenido a Bienbebidos, una licoreria que te entrega todo lo que buscas a solo un par de clicks!! 🌎🍹🥣✈️</h1> 
+<h1>¡Hola ✌️, Bienvenido a Bienbebidos®, una licoreria que te entrega todo lo que buscas a solo un par de clicks!! 🌎🍹🥣✈️</h1> 
 <br>
 <br>
 <h1>Introducción</h1>
@@ -18,7 +18,7 @@ componentes del <Navbar />
 <br>
 <br>
 <br>
-<h1>Estado del proyecto </h1>
+<h1 className="fs-1">Estado del proyecto </h1>
 
 <span style="color: yellow">Terminado 👌.</span>
 
@@ -44,14 +44,14 @@ componentes del <Navbar />
     <a href="https://reactjs.org/docs/getting-started.html">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" height="48" width="48"/>
     </a>
-    <a href="https://firebase.google.com/docs">
-        <img src="https://img.icons8.com/color/480/firebase.png" height="48" width="48"/>
+    <a href="https://expressjs.com/">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_QMQU86---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6dnng3pre04xxdebia1g.png" height="48" width="48"/>
     </a>
     <a href="https://docs.npmjs.com/">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh9vC2g2zT7TKq_T2hgXPm50Kmg8lrwDSZGcujUf21JQ&s" height="48" width="48"/>
     </a>
-     <a href="https://www.netlify.com/">
-        <img src="https://www.netlify.com/img/global/meta-image.jpg" height="48" width="48"/>
+     <a href="https://www.mongodb.com/es">
+        <img src="https://www.dblandit.com/img/educacion/mongodb.jpg" height="48" width="48"/>
     </a>
       <a href="https://code.visualstudio.com/">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCs7_EKbgALLq-gRSjih3SyFRSRX7uVa9Xzag8G_JIIQ&s" height="48" width="48"/>
