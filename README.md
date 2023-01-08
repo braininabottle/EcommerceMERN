@@ -26,7 +26,7 @@ componentes del **/NAVBAR**.
 <br>
 <br>
 <br>
-<h1> Tecnologias usadas 🛠️</h1>
+<h1> Tecnologias usadas para construir este proyecto 🛠️</h1>
 <br>
 <p>
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
@@ -60,7 +60,6 @@ componentes del **/NAVBAR**.
         <img src="https://mui.com/static/logo.png" height="48" width="48"/>
     </a>
 </p>
-<br>
 <br>
 <br>
 <br>
