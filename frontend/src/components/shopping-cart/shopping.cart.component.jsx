@@ -15,7 +15,7 @@ const ShoppingCart = () => {
     const productReducer = async () => {
         console.log('estoy en el try catch')
         try {
-            const response = await axios.put('http://localhost:4000/api/products/reducedstock', { cart })
+            const response = await axios.put('https://bottlo.onrender.com/api/products/reducedstock', { cart })
             console.log(response)
         } catch (error) {
             console.log(error.message)
